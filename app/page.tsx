@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useMemo } from "react";
-import Papa from "papaparse"; // Importando o 'Papa' diretamente
+import Papa from "papaparse";
 import Image from "next/image";
 import { Mail, Linkedin } from "lucide-react";
 import Navbar from "@/components/Navbar";
