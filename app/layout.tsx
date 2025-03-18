@@ -16,13 +16,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Sobre nós | NEI-ISEP",
     description: "A equipa",
+    icons: {
+        icon: "/icon.png"
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="pt">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar departments={["Início", "Serviços", "Contato"]} />
+        <Navbar />
         {children}
         </body>
         </html>
