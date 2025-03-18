@@ -39,7 +39,7 @@ const CountUpAnimation = ({ target }: { target: number }) => {
 
 const MemberCard = ({ member, isFlipped, toggleFlip }: { member: Member; isFlipped: boolean; toggleFlip: () => void }) => {
     return (
-        <div className="relative w-64 h-80 cursor-pointer perspective mx-4" onClick={toggleFlip}>
+        <div className="relative w-70 h-96 cursor-pointer perspective mx-4" onClick={toggleFlip}>
             <div className={`relative w-full h-full transition-transform duration-500 ${isFlipped ? "rotate-y-180" : ""}`} style={{ transformStyle: "preserve-3d" }}>
                 <div className="absolute w-full h-full bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-4 backface-hidden">
                     <div className="w-full h-full mb-4 relative">
@@ -65,7 +65,7 @@ const TeamSection = ({ department, members }: { department: string; members: Mem
     const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
     return (
-        <section id={department} className="p-8 mt-10 mx-auto max-w-7xl text-center">
+        <section id={department} className="p-8 mt-2 mx-auto max-w-7xl text-center">
             <h2 className="text-3xl font-bold mb-10">{department}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-fit mx-auto">
                 {members.map((member, index) => (
@@ -111,19 +111,26 @@ export default function TeamPage() {
 
     return (
         <div>
-            <Navbar departments={teams.map(([dept]) => dept)} />
+            <Navbar departments={teams.map(([dept]) => dept)}/>
             <div className="max-w-6xl mx-auto px-4 mt-40">
                 <h2 className="text-4xl font-bold text-left mb-6">Quem somos</h2>
-                <p className="text-gray-500 text-lg mb-6">
-                    O NEI-ISEP (Núcleo de Estudantes de Informática do Instituto Superior de Engenharia do Porto) é um núcleo criado por estudantes de Engenharia Informática que pretende enriquecer a experiência acadêmica e profissional dos alunos do ISEP.
-                </p>
+                <p className="text-gray-500 text-lg mb-6"> O NEI-ISEP, Núcleo de Estudantes de Informática do Instituto Superior de Engenharia do Porto, é um
+                    Núcleo criado por estudantes de Engenharia Informática do mesmo, que pretende enriquecer a experiência dos diversos estudantes do ISEP
+                    durante a sua permanência no instituto a vários níveis relacionados com a nossa área de intervenção – Informática, as TIC e Novas Tecnologias. </p>
+                <p className="text-gray-500 text-lg mb-6"> O NEI-ISEP pretende cultivar um espírito de comunidade e entreajuda, bem como estabelecer ligações com
+                    o mercado empresarial, além de proporcionar experiências que permitam enriquecer diversas competências associadas à nossa área de intervenção.</p>
+                <p className="text-gray-500 text-lg mb-6"> É objetivo do NEI-ISEP ser um órgão que pretende apoiar e representar os estudantes de Engenharia Informática do ISEP.</p>
             </div>
-            <div className="mx-auto px-4 mt-12">
-                <CountUpAnimation target={totalMembers} />
+            <div className="max-w-6xl mx-auto px-4 mt-15">
+                <CountUpAnimation target={totalMembers}/>
+                <div className="border-b border-gray-300 my-8 mt-15"></div>
+            </div>
+            <div className="max-w-6xl mx-auto px-4 mt-15">
+                <h2 className="text-4xl font-bold text-left">A equipa</h2>
             </div>
             {teams.map(([department, members]) => (
-                <TeamSection key={department} department={department} members={members} />
+                <TeamSection key={department} department={department} members={members}/>
             ))}
         </div>
-    );
+        );
 }
