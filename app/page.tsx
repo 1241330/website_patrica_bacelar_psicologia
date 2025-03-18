@@ -111,7 +111,7 @@ export default function TeamPage() {
 
     return (
         <div>
-            <Navbar departments={teams.map(([dept]) => dept)}/>
+            <Navbar />
             <div className="max-w-6xl mx-auto px-4 mt-40">
                 <h2 className="text-4xl font-bold text-left mb-6">Quem somos</h2>
                 <p className="text-gray-500 text-lg mb-6"> O NEI-ISEP, Núcleo de Estudantes de Informática do Instituto Superior de Engenharia do Porto, é um
