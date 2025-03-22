@@ -1,136 +1,123 @@
-"use client";
-import { useEffect, useState, useMemo } from "react";
-import Papa from "papaparse";
 import Image from "next/image";
-import { Mail, Linkedin } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-interface Member {
-    department: string;
-    name: string;
-    role: string;
-    img: string;
-    linkedin: string;
-    email: string;
-}
-
-const CountUpAnimation = ({ target }: { target: number }) => {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        const interval = setTimeout(() => {
-            if (count < target) {
-                setCount(prev => prev + 1);
-            } else if (count > target) {
-                setCount(prev => prev - 1);
-            }
-        }, 30);
-
-        return () => clearTimeout(interval);
-    }, [target, count]);
-
+const Page = () => {
     return (
-        <div className="text-center mt-8 max-w-2xl mx-auto">
-            <span className="text-8xl text-cyan-400">{count}</span>
-            <p className="text-xl text-gray-600">membros no total</p>
-        </div>
-    );
-};
+        <div className="space-y-20">
+            {/* Imagem de margem a margem */}
+            <div className="w-full h-[600px] relative">
+                <Image
+                    src="/imagem_fundo.png"
+                    alt="Imagem de margem a margem"
+                    fill
+                    className="object-cover object-top"
+                />
+            </div>
 
-const MemberCard = ({ member, isFlipped, toggleFlip }: { member: Member; isFlipped: boolean; toggleFlip: () => void }) => {
-    return (
-        <div className="relative w-70 h-96 cursor-pointer perspective mx-4" onClick={toggleFlip}>
-            <div className={`relative w-full h-full transition-transform duration-500 ${isFlipped ? "rotate-y-180" : ""}`} style={{ transformStyle: "preserve-3d" }}>
-                <div className="absolute w-full h-full bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-4 backface-hidden">
-                    <div className="w-full h-full mb-4 relative">
-                        <Image src={`/members/${member.img}`} alt={member.name} fill className="absolute top-0 left-0 rounded-lg object-cover" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-center">{member.name}</h3>
-                    <p className="text-gray-500 text-center">{member.role}</p>
+            {/* Linha vermelha */}
+            <div className="border-t border-red-900 w-3/4 mx-auto my-5"></div>
+
+
+            {/* Imagem à esquerda com frase à direita */}
+            <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-4 px-6 md:px-48 py-4 mb-4">
+                <div className="w-full md:w-1/2">
+                    <Image
+                        src="/img_esquerda.png"
+                        alt="Imagem à esquerda"
+                        width={600}
+                        height={600}
+                        className="object-cover"
+                    />
                 </div>
-                <div className="absolute w-full h-full bg-cyan-50 shadow-lg rounded-lg flex flex-col items-center justify-center p-4 rotate-y-180 backface-hidden">
-                    <h3 className="text-lg font-semibold mb-2 text-center">{member.name}</h3>
-                    <p className="text-sm mb-4 text-center">{member.role}</p>
-                    <div className="flex gap-4">
-                        {member.email && <a href={`mailto:${member.email}`} className="hover:text-cyan-400"><Mail className="w-6 h-6" /></a>}
-                        {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400"><Linkedin className="w-6 h-6" /></a>}
-                    </div>
+                <div className="w-full md:w-1/2 text-lg text-blue-950 text-center font-semibold md:text-center border-gray-700">
+                    <p>“Não somos apenas o que pensamos ser.</p>
+                    <p>Somos mais: somos também o que lembramos e aquilo de que nos esquecemos; somos as palavras que trocamos, os enganos que cometemos, os impulsos a que cedemos ‘sem querer’.”</p>
+                    <p>- Sigmund Freud</p>
                 </div>
             </div>
-        </div>
-    );
-};
 
-const TeamSection = ({ department, members }: { department: string; members: Member[] }) => {
-    const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+            {/* Linha vermelha */}
+            <div className="border-t border-red-900 w-3/4 mx-auto my-5"></div>
 
-    return (
-        <section id={department} className="p-8 mt-2 mx-auto max-w-7xl text-center">
-            <h2 className="text-3xl font-bold mb-10">{department}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-fit mx-auto">
-                {members.map((member, index) => (
-                    <MemberCard
-                        key={member.name}
-                        member={member}
-                        isFlipped={flippedIndex === index}
-                        toggleFlip={() => setFlippedIndex(flippedIndex === index ? null : index)}
-                    />
+            {/* Seção de Cards */}
+            <div className="text-center my-10">
+                <h2 className="text-2xl text-blue-950 font-bold">
+                    Descubra as nossas consultas especializadas para cuidar do seu bem-estar.
+                </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-6 md:px-20 py-6">
+                {[
+                    { title: "Consultas de Psicologia Clínica", icon: "/icon1.png" },
+                    { title: "Intervenção Familiar", icon: "/icon2.png" },
+                    { title: "Intervenção de Casal", icon: "/icon3.png" },
+                    { title: "Grupos Regulares de Meditação", icon: "/icon4.png" },
+                    { title: "Consultas de Psicologia Online", icon: "/icon5.png" }
+                ].map((item, index) => (
+                    <div
+                        key={index}
+                        className="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-full hover:shadow-xl transition duration-300"
+                    >
+                        {/* Ícone */}
+                        <div className="w-20 h-20 flex justify-center">
+                            <Image src={item.icon} alt={item.title} width={80} height={80} />
+                        </div>
+
+                        {/* Título */}
+                        <h3 className="text-lg font-semibold text-blue-950 mt-4">
+                            {item.title}
+                        </h3>
+
+                        {/* Link */}
+                        <div className="mt-auto">
+                            <a href="#" className="text-xs text-blue-950 mt-4 hover:underline">
+                                Saber mais →
+                            </a>
+                        </div>
+                    </div>
                 ))}
             </div>
-        </section>
+
+            {/* Hero Section */}
+            <section className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh] bg-blue-950 text-white">
+                {/* Lado Esquerdo */}
+                <div className="flex flex-col justify-center px-6 md:px-20 py-16">
+                    <h1 className="text-4xl font-bold mb-6">
+                        Cuide da sua mente como cuida do seu corpo
+                    </h1>
+                    <p className="text-lg mb-8">
+                        Proporcionamos um ambiente acolhedor e seguro, onde encontra soluções para as suas preocupações e desafios com o apoio da nossa psicóloga, Patrícia Bacelar.
+                    </p>
+                    <div className="flex space-x-8 text-2xl font-semibold items-center">
+                        <div>
+                            <span className="block text-4xl">+500</span>
+                            <span className="text-lg items-center">Consultas</span>
+                        </div>
+                        <div>
+                            <span className="block text-4xl">+200</span>
+                            <span className="text-lg ">Sorrisos</span>
+                        </div>
+                    </div>
+                    <button className="mt-8 bg-white text-blue-950 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-200 transition">
+                        Marcar Consulta
+                    </button>
+                </div>
+
+                {/* Lado Direito - Imagem */}
+                <div className="relative">
+                    <Image
+                        src="/img_consultas.png"
+                        alt="Consultório"
+                        fill
+                        className="object-cover rounded-lg shadow-lg"
+                    />
+                </div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
+        </div>
     );
 };
 
-export default function TeamPage() {
-    const [teams, setTeams] = useState<[string, Member[]][]>([]);
-
-    useEffect(() => {
-        const loadMembers = async () => {
-            const response = await fetch("/members.csv");
-            const text = await response.text();
-
-            Papa.parse<Member>(text, {
-                header: true,
-                skipEmptyLines: true,
-                complete: ({ data }) => {
-                    const groupedMembers = data.reduce((acc, member) => {
-                        acc[member.department] = acc[member.department] || [];
-                        acc[member.department].push(member);
-                        return acc;
-                    }, {} as Record<string, Member[]>);
-
-                    setTeams(Object.entries(groupedMembers));
-                },
-            });
-        };
-
-        loadMembers();
-    }, []);
-
-    const totalMembers = useMemo(() => teams.reduce((sum, [, members]) => sum + members.length, 0), [teams]);
-
-    return (
-        <div>
-            <Navbar />
-            <div className="max-w-6xl mx-auto px-4 mt-40">
-                <h2 className="text-4xl font-bold text-left mb-6">Quem somos</h2>
-                <p className="text-gray-500 text-lg mb-6"> O NEI-ISEP, Núcleo de Estudantes de Informática do Instituto Superior de Engenharia do Porto, é um
-                    Núcleo criado por estudantes de Engenharia Informática do mesmo, que pretende enriquecer a experiência dos diversos estudantes do ISEP
-                    durante a sua permanência no instituto a vários níveis relacionados com a nossa área de intervenção – Informática, as TIC e Novas Tecnologias. </p>
-                <p className="text-gray-500 text-lg mb-6"> O NEI-ISEP pretende cultivar um espírito de comunidade e entreajuda, bem como estabelecer ligações com
-                    o mercado empresarial, além de proporcionar experiências que permitam enriquecer diversas competências associadas à nossa área de intervenção.</p>
-                <p className="text-gray-500 text-lg mb-6"> É objetivo do NEI-ISEP ser um órgão que pretende apoiar e representar os estudantes de Engenharia Informática do ISEP.</p>
-            </div>
-            <div className="max-w-6xl mx-auto px-4 mt-15">
-                <CountUpAnimation target={totalMembers}/>
-                <div className="border-b border-gray-300 my-8 mt-15"></div>
-            </div>
-            <div className="max-w-6xl mx-auto px-4 mt-15">
-                <h2 className="text-4xl font-bold text-left">A equipa</h2>
-            </div>
-            {teams.map(([department, members]) => (
-                <TeamSection key={department} department={department} members={members}/>
-            ))}
-        </div>
-        );
-}
+export default Page;

@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Sobre nós | NEI-ISEP",
-    description: "A equipa",
+    title: "Patrícia Bacelar | Psicologia Clínica ",
+    description: "Porque me importo, contribuo sorrindo",
     icons: {
-        icon: "/icon.png"
+        icon: "/img.png"
     },
 };
 
