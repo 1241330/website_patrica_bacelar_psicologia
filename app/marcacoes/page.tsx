@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const Marcacoes = () => {
     const [formData, setFormData] = useState({
@@ -53,128 +54,140 @@ const Marcacoes = () => {
         e.preventDefault();
         if (validateForm()) {
             alert("Consulta marcada com sucesso!");
-            // Aqui você pode adicionar a lógica para enviar os dados para um servidor
         } else {
             alert("Por favor, preencha todos os campos corretamente.");
         }
     };
 
     return (
-        <div className="flex flex-col min-h-screen">
-            {/* Conteúdo principal */}
-            <main className="flex-grow max-w-lg mx-auto bg-white p-6 rounded-xl shadow-md mt-40 mb-10 w-full md:max-w-2xl lg:max-w-3xl">
-                <h1 className="text-2xl font-bold text-center mb-4 text-blue-950">Marque a sua consulta</h1>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label className="block font-medium" htmlFor="nome">Nome:</label>
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            value={formData.nome}
-                            onChange={handleChange}
-                            className={`w-full p-2 border rounded-md ${formErrors.nome ? 'border-red-500' : 'border-gray-300'}`}
-                            required
-                        />
-                        {formErrors.nome && <p className="text-red-500 text-xs">Por favor, insira seu nome.</p>}
-                    </div>
-                    <div>
-                        <label className="block font-medium" htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className={`w-full p-2 border rounded-md ${formErrors.email ? 'border-red-500' : 'border-gray-300'}`}
-                            required
-                        />
-                        {formErrors.email && <p className="text-red-500 text-xs">Por favor, insira um email válido.</p>}
-                    </div>
-                    <div>
-                        <label className="block font-medium" htmlFor="telefone">Telefone:</label>
-                        <input
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            value={formData.telefone}
-                            onChange={handleChange}
-                            className={`w-full p-2 border rounded-md ${formErrors.telefone ? 'border-red-500' : 'border-gray-300'}`}
-                            required
-                        />
-                        {formErrors.telefone && <p className="text-red-500 text-xs">Por favor, insira seu telefone.</p>}
-                    </div>
-                    <div>
-                        <label className="block font-medium">Tipo de Consulta:</label>
-                        <div className="space-y-1">
-                            {["psicologia", "terapia", "online"].map((option, index) => (
-                                <label key={index} className="flex items-center gap-2">
-                                    <input
-                                        type="radio"
-                                        name="opcao"
-                                        value={option}
-                                        checked={formData.opcao === option}
-                                        onChange={handleChange}
-                                    />
-                                    {option === "psicologia"
-                                        ? "Consulta de Psicologia"
-                                        : option === "terapia"
-                                            ? "Consulta de Terapia de Casal/Familiar"
-                                            : "Consulta de Psicologia Online"}
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-                    <div>
-                        <label className="block font-medium" htmlFor="dataConsulta">Data Preferencial:</label>
-                        <input
-                            type="date"
-                            id="dataConsulta"
-                            name="dataConsulta"
-                            value={formData.dataConsulta}
-                            onChange={handleChange}
-                            className={`w-full p-2 border rounded-md ${formErrors.dataConsulta ? 'border-red-500' : 'border-gray-300'}`}
-                            required
-                        />
-                        {formErrors.dataConsulta && <p className="text-red-500 text-xs">Por favor, selecione uma data.</p>}
-                    </div>
-                    <div>
-                        <label className="block font-medium" htmlFor="motivo">Motivo da consulta:</label>
-                        <textarea
-                            id="motivo"
-                            name="motivo"
-                            value={formData.motivo}
-                            onChange={handleChange}
-                            className="w-full p-2 border rounded-md"
-                            rows={3}
-                        />
-                    </div>
-                    <div>
-                        <label className="block font-medium">Selecione uma opção:</label>
-                        <div className="space-y-1">
-                            {["primeira", "seguimento"].map((option, index) => (
-                                <label key={index} className="flex items-center gap-2">
-                                    <input
-                                        type="checkbox"
-                                        name="tipoConsulta"
-                                        value={option}
-                                        checked={formData.tipoConsulta.includes(option)}
-                                        onChange={handleChange}
-                                    />
-                                    {option === "primeira" ? "Primeira Consulta" : "Consulta de Seguimento"}
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-                    <button type="submit" className="w-full bg-blue-950 text-white py-2 rounded-md hover:bg-blue-900 font-bold">
-                        Marcar Agora
-                    </button>
-                </form>
-            </main>
+        <section className="py-24 bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen flex flex-col items-center mt-20">
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+            >
+                <h1 className="text-5xl font-extrabold text-blue-900 leading-tight">Marque a sua consulta</h1>
+                <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+            </motion.div>
 
-            {/* Footer fixado abaixo */}
+            <motion.form
+                onSubmit={handleSubmit}
+                className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-3xl space-y-6 border border-gray-200 mb-10"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+                {[
+                    { label: "Nome", name: "nome", type: "text" },
+                    { label: "Email", name: "email", type: "email" },
+                    { label: "Telefone", name: "telefone", type: "tel" },
+                ].map((field, index) => (
+                    <div key={index}>
+                        <label className="block text-blue-950 font-medium">{field.label}:</label>
+                        <input
+                            type={field.type}
+                            name={field.name}
+                            value={(formData as any)[field.name]}
+                            onChange={handleChange}
+                            className={`w-full p-3 border rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 ${
+                                formErrors[field.name as keyof typeof formErrors] ? "border-red-500" : "border-gray-300"
+                            }`}
+                        />
+                        {formErrors[field.name as keyof typeof formErrors] && (
+                            <p className="text-red-500 text-sm mt-1">Por favor, insira um {field.label.toLowerCase()} válido.</p>
+                        )}
+                    </div>
+                ))}
+
+                <div>
+                    <label className="block text-blue-950 font-medium">Tipo de Consulta:</label>
+                    <div className="space-y-2">
+                        {[
+                            { value: "psicologia", label: "Consulta de Psicologia" },
+                            { value: "terapia", label: "Consulta de Terapia de Casal/Familiar" },
+                            { value: "online", label: "Consulta de Psicologia Online" },
+                        ].map((option, index) => (
+                            <label
+                                key={index}
+                                className="flex items-center gap-2 text-blue-950 cursor-pointer transition-all hover:text-blue-700"
+                            >
+                                <input
+                                    type="radio"
+                                    name="opcao"
+                                    value={option.value}
+                                    checked={formData.opcao === option.value}
+                                    onChange={handleChange}
+                                    className="accent-blue-600"
+                                />
+                                {option.label}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                <div>
+                    <label className="block text-blue-950 font-medium">Data Preferencial:</label>
+                    <input
+                        type="date"
+                        name="dataConsulta"
+                        value={formData.dataConsulta}
+                        onChange={handleChange}
+                        className={`w-full p-3 border rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 ${
+                            formErrors.dataConsulta ? "border-red-500" : "border-gray-300"
+                        }`}
+                    />
+                    {formErrors.dataConsulta && <p className="text-red-500 text-sm mt-1">Por favor, selecione uma data.</p>}
+                </div>
+
+                <div>
+                    <label className="block text-blue-950 font-medium">Motivo da consulta:</label>
+                    <textarea
+                        name="motivo"
+                        value={formData.motivo}
+                        onChange={handleChange}
+                        className="w-full p-3 border rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500"
+                        rows={3}
+                    />
+                </div>
+
+                <div>
+                    <label className="block text-blue-950 font-medium">Selecione uma opção:</label>
+                    <div className="space-y-2">
+                        {[
+                            { value: "primeira", label: "Primeira Consulta" },
+                            { value: "seguimento", label: "Consulta de Seguimento" },
+                        ].map((option, index) => (
+                            <label
+                                key={index}
+                                className="flex items-center gap-2 text-blue-950 cursor-pointer transition-all hover:text-blue-700"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="tipoConsulta"
+                                    value={option.value}
+                                    checked={formData.tipoConsulta.includes(option.value)}
+                                    onChange={handleChange}
+                                    className="accent-blue-600"
+                                />
+                                {option.label}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                <motion.button
+                    type="submit"
+                    className="w-full bg-blue-950 text-white py-3 rounded-xl font-bold shadow-md transition-all hover:bg-blue-800"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    Marcar Agora
+                </motion.button>
+            </motion.form>
+
             <Footer />
-        </div>
+        </section>
     );
 };
 
