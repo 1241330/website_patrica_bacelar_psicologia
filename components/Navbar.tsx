@@ -33,9 +33,8 @@ const Navbar = () => {
                         </button>
                         {isEventsOpen && (
                             <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-max">
-                                <Link href="/equipa" className="block px-6 py-3 text-blue-950 hover:bg-neutral-100">Equipa</Link>
-                                <Link href="/servicos" className="block px-6 py-3 text-blue-950 hover:bg-neutral-100">Serviços</Link>
-                                <Link href="/espaco" className="block px-6 py-3 text-blue-950 hover:bg-neutral-100">Espaço</Link>
+                                <Link href="/equipa" className="block px-6 py-3 text-blue-950 hover:bg-blue-100">Equipa</Link>
+                                <Link href="/espaco" className="block px-6 py-3 text-blue-950 hover:bg-blue-100">Espaço</Link>
                             </div>
                         )}
                     </div>
@@ -48,15 +47,18 @@ const Navbar = () => {
                         </button>
                         {isServicesOpen && (
                             <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-max">
-                                <Link href="/servicos/consultas_psicologia" className="block px-4 py-2 text-blue-950 hover:bg-neutral-100">Consultas de Psicologia</Link>
-                                <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-blue-950 hover:bg-neutral-100">Intervenção Familiar</Link>
-                                <Link href="/servicos/grupos_terapêuticos" className="block px-4 py-2 text-blue-950 hover:bg-neutral-100">Grupos Terapêuticos</Link>
-                                <Link href="/servicos/workshops_formacoes" className="block px-4 py-2 text-blue-950 hover:bg-neutral-100">Workshops/Formações</Link>
+                                <Link href="/servicos/consultas_psicologia" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Consultas de Psicologia</Link>
+                                <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção Familiar</Link>
+                                <Link href="/servicos/intervencao_casal" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção de Casal</Link>
+                                <Link href="/servicos/grupos_meditacao" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Regulares de Meditação</Link>
+                                <Link href="/servicos/grupos_terapêuticos" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Terapêuticos</Link>
+                                <Link href="/servicos/workshops_formacoes" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Workshops/Formações</Link>
                             </div>
                         )}
                     </div>
 
                     <Link href="/marcacoes" className={menuItemClass}>Marcações</Link>
+                    <Link href="/faq" className={menuItemClass}>FAQ's</Link>
                     <Link href="/contactos" className={menuItemClass}>Contactos</Link>
                 </div>
 
@@ -78,18 +80,17 @@ const Navbar = () => {
 
                 {/* Links do menu */}
                 <ul className="flex flex-col items-start mt-16 p-6 space-y-4">
-                    <li><Link href="/inicio" className="text-white font-bold text-lg" onClick={() => setIsOpen(false)}>Início</Link></li>
+                    <li><Link href="/" className="text-white font-bold text-lg" onClick={() => setIsOpen(false)}>Início</Link></li>
 
                     {/* Dropdown Sobre nós no mobile */}
                     <li>
-                        <button onClick={() => setIsEventsOpen(!isEventsOpen)} className="flex items-center space-x-1 text-white font-bold text-lg">
-                            <span>Sobre Nós</span>
-                            <ChevronDown className="w-4 h-4" />
+                        <button onClick={() => setIsEventsOpen(!isEventsOpen)}
+                                className="flex items-center space-x-1 text-white font-bold text-lg"><span>Sobre Nós</span>
+                            <ChevronDown className="w-4 h-4"/>
                         </button>
                         {isEventsOpen && (
                             <ul className="mt-2 pl-4 space-y-2">
                                 <Link href="/equipa" className="block px-6 py-3 text-white hover:underline">Equipa</Link>
-                                <Link href="/servicos" className="block px-6 py-3 text-white hover:underline">Serviços</Link>
                                 <Link href="/espaco" className="block px-6 py-3 text-white hover:underline">Espaço</Link>
                             </ul>
                         )}
@@ -97,20 +98,24 @@ const Navbar = () => {
 
                     {/* Dropdown Serviços no mobile */}
                     <li>
-                        <button onClick={() => setIsServicesOpen(!isServicesOpen)} className="flex items-center space-x-1 text-white font-bold text-lg">
+                        <button onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                className="flex items-center space-x-1 text-white font-bold text-lg">
                             <span>Serviços</span>
-                            <ChevronDown className="w-4 h-4" />
+                            <ChevronDown className="w-4 h-4"/>
                         </button>
                         {isServicesOpen && (
                             <ul className="mt-2 pl-4 space-y-2">
                                 <Link href="/servicos/consultas_psicologia" className="block px-4 py-2 text-white hover:underline">Consultas de Psicologia</Link>
                                 <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-white hover:underline">Intervenção Familiar</Link>
+                                <Link href="/servicos/intervencao_casal" className="block px-4 py-2 text-white hover:underline">Intervenção de Casal</Link>
+                                <Link href="/servicos/grupos_meditacao" className="block px-4 py-2 text-white hover:underline">Grupos Regulares de Meditação</Link>
                                 <Link href="/servicos/grupos_terapêuticos" className="block px-4 py-2 text-white hover:underline">Grupos Terapêuticos</Link>
                                 <Link href="/servicos/workshops_formacoes" className="block px-4 py-2 text-white hover:underline">Workshops/Formações</Link>
                             </ul>
                         )}
                     </li>
-
+                    <li><Link href="/marcacoes" className="text-white font-bold text-lg" onClick={() => setIsOpen(false)}>Marcações</Link></li>
+                    <li><Link href="/faq" className="text-white font-bold text-lg" onClick={() => setIsOpen(false)}>FAQ's</Link></li>
                     <li><Link href="/contactos" className="text-white font-bold text-lg" onClick={() => setIsOpen(false)}>Contactos</Link></li>
                 </ul>
             </div>
