@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
-import Footer from "@/components/Footer"; // Caminho para o Footer
-import { motion } from "framer-motion"; // Importando o framer-motion
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
