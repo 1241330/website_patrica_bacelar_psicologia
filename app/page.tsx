@@ -23,17 +23,22 @@ const Page = () => {
                             className="object-cover"/>
                     </div>
                     {/* Conteúdo à direita */}
-                    <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-20 py-16 z-10">
-                        <h1 className="text-5xl font-extrabold mb-6 leading-tight">Sobre a nossa clínica</h1>
-                        <p className="text-2xl text-lg mb-8">
-                            O espaço<span className="text-blue-400"> Patrícia Bacelar Psicologia Clínica</span>, é especializado em terapias individuais e de
-                            grupo, terapia de casal e apoio psicológico para crianças, jovens e adultos.
+                    <div
+                        className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-20 py-16 z-10 text-center md:text-left">
+                        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                            Sobre a nossa clínica
+                        </h1>
+                        <p className="text-lg md:text-xl mb-8">
+                            O espaço<span className="text-blue-400"> Patrícia Bacelar Psicologia Clínica</span>, é
+                            especializado em terapias individuais e de grupo, terapia de casal e apoio psicológico para crianças, jovens e adultos.
                         </p>
-                        <div className="flex justify-left mt-3">
+                        <div className="flex justify-center md:justify-start">
                             <Link href="/equipa">
                                 <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    className="bg-white text-blue-950 font-semibold px-70 py-3 rounded-full shadow-md hover:bg-gray-400 hover:text-white transition duration-300">Saiba Mais
+                                    whileHover={{scale: 1.05}}
+                                    className="text-base md:text-xl px-30 md:px-70 py-3 md:py-3 bg-white text-blue-950 font-semibold rounded-full shadow-md hover:bg-gray-400 hover:text-white transition duration-300"
+                                >
+                                    Saiba Mais
                                 </motion.button>
                             </Link>
                         </div>
