@@ -66,7 +66,7 @@ const Navbar = () => {
                         </button>
                         {(isServicesOpen || isServicesHovered) && (
                             <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-max">
-                                <Link href="/servicos/consultas_psicologia" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Consultas de Psicologia</Link>
+                                <Link href="/consultas_psicologia" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Consultas de Psicologia</Link>
                                 <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção Familiar</Link>
                                 <Link href="/servicos/intervencao_casal" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção de Casal</Link>
                                 <Link href="/servicos/grupos_meditacao" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Regulares de Meditação</Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
                         </button>
                         {isServicesOpen && (
                             <ul className="mt-2 pl-4 space-y-2">
-                                <Link href="/servicos/consultas_psicologia" className="block px-4 py-2 text-white hover:underline">Consultas de Psicologia</Link>
+                                <Link href="/consultas_psicologia" className="block px-4 py-2 text-white hover:underline">Consultas de Psicologia</Link>
                                 <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-white hover:underline">Intervenção Familiar</Link>
                                 <Link href="/servicos/intervencao_casal" className="block px-4 py-2 text-white hover:underline">Intervenção de Casal</Link>
                                 <Link href="/servicos/grupos_meditacao" className="block px-4 py-2 text-white hover:underline">Grupos Regulares de Meditação</Link>

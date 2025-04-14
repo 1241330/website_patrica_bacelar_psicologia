@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="border-t border-gray-700 mt-8 py-4 text-center text-gray-400 text-sm">
                 <p>© 2025 Patrícia Bacelar Psicologia Clínica. Desenvolvido por:
                     <span className="ml-1">
-                        <a href="https://www.linkedin.com/in/carlotalemos"
+                        <a href="https://www.linkedin.com/in/carlotamlemos"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="text-white hover:text-blue-500 transition font-semibold">
