@@ -1,12 +1,13 @@
 name = "patriciabacelarpsicologia"
-account_id = "b5cf8f7f56a0d1c6b26086d31f0a7b0"
+account_id = "b5cf8f7f56a6d1c6b260865d31f0a7b0"
 workers_dev = true
 compatibility_date = "2025-04-15"
 
+# Coloque o caminho para o arquivo principal do Worker diretamente aqui
+main = "./out/worker-site/index.js"
+
 [build]
-command = "npm run build && npm run export"
-upload.dir = "out"  # Diretório onde os arquivos estáticos são gerados após o comando 'npm run export'
+command = "npm run build"  # Comando para gerar a build
 
 [site]
-bucket = "./out"  # A pasta onde estão os arquivos exportados
-entry-point = "."  # Aqui, o entry-point pode ser '.' (pasta raiz) para um site estático
+bucket = "./out"  # Diretório do site
