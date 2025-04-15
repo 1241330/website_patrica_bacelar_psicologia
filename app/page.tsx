@@ -36,7 +36,7 @@ const Page = () => {
                             <Link href="/equipa">
                                 <motion.button
                                     whileHover={{scale: 1.05}}
-                                    className="text-base md:text-xl px-30 md:px-70 py-3 md:py-3 bg-white text-blue-950 font-semibold rounded-full shadow-md hover:bg-gray-400 hover:text-white transition duration-300"
+                                    className="text-base md:text-l px-60 md:px-60 py-2 md:py-2 bg-white text-blue-950 font-semibold rounded-full shadow-md hover:bg-gray-400 hover:text-white transition duration-300"
                                 >
                                     Saiba Mais
                                 </motion.button>
