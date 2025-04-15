@@ -1,4 +1,4 @@
-## 🌐 Website - Patrícia Bacelar, Psicologia Clínica
+## 🌐 Website - Patrícia Bacelar Psicologia Clínica
 
 >This repository contains the official website of Patrícia Bacelar Psicologia Clínica, designed to strengthen the clinic’s digital presence, ensure a user-friendly experience, and convey a sense of trust, professionalism, and care.
 
