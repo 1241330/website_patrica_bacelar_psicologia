@@ -1,15 +1,13 @@
 name = "psicologia-site"
-type = "webpack"
-account_id = "b5cf8f7f56a6d1c6b260865d31f0a7b0"
+type = "javascript"
+account_id = "b5cf8f7f56a0d1c6b26086d31f0a7b0"
 workers_dev = true
 compatibility_date = "2025-04-15"
 
 [build]
-command = "npm run build"
-cwd = "."
-upload.format = "directory"
-upload.dir = ".next"
+command = "npm run build && npm run export"
+upload.dir = "out"
 
 [site]
-bucket = ".next"
-entry-point = "workers-site"
+bucket = "./out"
+entry-point = "."
