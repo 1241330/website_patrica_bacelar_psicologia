@@ -9,4 +9,4 @@ upload.dir = "out"
 
 [site]
 bucket = "./out"
-entry-point = "."
+entry-point = "workers-site/index.js"
