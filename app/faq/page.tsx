@@ -36,7 +36,7 @@ const FAQSection = () => {
                 transition={{duration: 0.5}}
                 className="text-center mb-10"
             >
-                <h1 className="text-5xl font-extrabold text-blue-900 leading-tight mt-40">Perguntas Frequentes</h1>
+                <h1 className="text-4xl font-extrabold text-blue-900 leading-tight mt-40">Perguntas Frequentes</h1>
                 <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
             </motion.div>
 

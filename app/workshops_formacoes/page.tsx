@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
-export default function ConsultasPsicologia() {
+export default function WorkshopsFormacoes() {
     return (
         <>
             <section className="pt-24 bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen flex flex-col items-center mt-20 px-6 md:px-20">
@@ -16,7 +16,7 @@ export default function ConsultasPsicologia() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl font-extrabold text-blue-900 leading-tight">
-                        Consultas de Psicologia
+                        Workshops e Formações
                     </h1>
                     <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
                 </motion.div>
@@ -24,8 +24,8 @@ export default function ConsultasPsicologia() {
                 {/* Imagem de capa */}
                 <div className="w-full max-w-5xl h-[400px] relative rounded-xl overflow-hidden mb-16 shadow-lg">
                     <Image
-                        src="/img_2.jpeg"
-                        alt="Consultório"
+                        src="/workshops.jpeg" // Substituir pela imagem final
+                        alt="Workshops e Formações"
                         fill
                         className="object-cover"
                     />
@@ -39,34 +39,30 @@ export default function ConsultasPsicologia() {
                     className="max-w-5xl mx-auto text-lg text-gray-800 space-y-6 leading-relaxed"
                 >
                     <p>
-                        As <strong className="text-blue-950">Consultas de Psicologia</strong> no nosso espaço clínico são concebidas
-                        para proporcionar um acompanhamento personalizado, centrado nas necessidades específicas de cada pessoa.
+                        Os nossos <strong className="text-blue-950">Workshops e Formações</strong> são momentos formativos e vivenciais que combinam conhecimento teórico com experiências práticas, promovendo o desenvolvimento pessoal e profissional.
                     </p>
 
                     <p>
-                        Intervimos em áreas como ansiedade, depressão, perturbações de personalidade, luto, dificuldades relacionais,
-                        entre outras. Trabalhamos com base em abordagens psicoterapêuticas validadas, num ambiente seguro e ético.
+                        Dirigidos a público geral, profissionais da saúde mental e áreas afins, estes eventos são construídos com base em abordagens integrativas, atualizadas e centradas na pessoa.
                     </p>
 
                     <p>
-                        As sessões podem decorrer em formato presencial ou online, sempre com foco na construção de uma relação
-                        terapêutica de confiança.
+                        São oportunidades para aprofundar temas relevantes, adquirir novas ferramentas e conectar-se com outras pessoas num ambiente acolhedor e estimulante.
                     </p>
                 </motion.div>
 
-                {/* Cards de áreas de atuação */}
+                {/* Cards com exemplos de temas ou áreas */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16 max-w-5xl w-full">
                     {[
-                        "Ansiedade",
-                        "Depressão",
-                        "Autoestima",
-                        "Stress",
-                        "Burnout",
-                        "Relacionamentos",
-                        "Crescimento pessoal",
-                        "Perturbações da Personalidade",
-                        "Atenção e Concentração",
-                        "Isolamento Social"
+                        "Mindfulness na prática clínica",
+                        "Regulação emocional",
+                        "Comunicação consciente",
+                        "Autoestima e identidade",
+                        "Burnout e autocuidado",
+                        "Psicologia corporal",
+                        "Empatia e escuta ativa",
+                        "Gestão de stress",
+                        "Ferramentas para terapeutas"
                     ].map((item, i) => (
                         <motion.div
                             key={i}
@@ -81,11 +77,11 @@ export default function ConsultasPsicologia() {
                 {/* CTA */}
                 <div className="flex justify-center mt-16 mb-16">
                     <motion.a
-                        href="/marcacoes"
+                        href="/contactos"
                         whileHover={{ scale: 1.05 }}
                         className="bg-blue-950 text-white font-semibold px-10 py-4 text-lg rounded-full shadow-md hover:bg-blue-900 transition duration-300"
                     >
-                        Agendar Consulta
+                        Saiba mais
                     </motion.a>
                 </div>
             </section>

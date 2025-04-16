@@ -67,11 +67,11 @@ const Navbar = () => {
                         {(isServicesOpen || isServicesHovered) && (
                             <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-max">
                                 <Link href="/consultas_psicologia" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Consultas de Psicologia</Link>
-                                <Link href="/servicos/intervencao_familiar" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção Familiar</Link>
-                                <Link href="/servicos/intervencao_casal" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção de Casal</Link>
-                                <Link href="/servicos/grupos_meditacao" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Regulares de Meditação</Link>
-                                <Link href="/servicos/grupos_terapêuticos" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Terapêuticos</Link>
-                                <Link href="/servicos/workshops_formacoes" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Workshops/Formações</Link>
+                                <Link href="/terapia_familiar" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção Familiar</Link>
+                                <Link href="/terapia_casal" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Intervenção de Casal</Link>
+                                <Link href="/grupos_meditacao" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Regulares de Meditação</Link>
+                                <Link href="/grupos_terapeuticos" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Grupos Terapêuticos</Link>
+                                <Link href="/workshops_formacoes" className="block px-4 py-2 text-blue-950 hover:bg-blue-100">Workshops/Formações</Link>
                             </div>
                         )}
                     </div>

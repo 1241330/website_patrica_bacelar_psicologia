@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
-export default function ConsultasPsicologia() {
+export default function IntervencaoCasal() {
     return (
         <>
             <section className="pt-24 bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen flex flex-col items-center mt-20 px-6 md:px-20">
@@ -16,7 +16,7 @@ export default function ConsultasPsicologia() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl font-extrabold text-blue-900 leading-tight">
-                        Consultas de Psicologia
+                        Intervenção de Casal
                     </h1>
                     <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
                 </motion.div>
@@ -24,8 +24,8 @@ export default function ConsultasPsicologia() {
                 {/* Imagem de capa */}
                 <div className="w-full max-w-5xl h-[400px] relative rounded-xl overflow-hidden mb-16 shadow-lg">
                     <Image
-                        src="/img_2.jpeg"
-                        alt="Consultório"
+                        src="/casal.jpeg" // Substitui pela imagem real
+                        alt="Intervenção de Casal"
                         fill
                         className="object-cover"
                     />
@@ -39,34 +39,30 @@ export default function ConsultasPsicologia() {
                     className="max-w-5xl mx-auto text-lg text-gray-800 space-y-6 leading-relaxed"
                 >
                     <p>
-                        As <strong className="text-blue-950">Consultas de Psicologia</strong> no nosso espaço clínico são concebidas
-                        para proporcionar um acompanhamento personalizado, centrado nas necessidades específicas de cada pessoa.
+                        A <strong className="text-blue-950">Intervenção de Casal</strong> oferece um espaço terapêutico onde ambos os membros da relação podem refletir, comunicar e trabalhar em conjunto para fortalecer a ligação e superar dificuldades.
                     </p>
 
                     <p>
-                        Intervimos em áreas como ansiedade, depressão, perturbações de personalidade, luto, dificuldades relacionais,
-                        entre outras. Trabalhamos com base em abordagens psicoterapêuticas validadas, num ambiente seguro e ético.
+                        Ao longo do processo, exploramos padrões de interação, emoções não expressas, e desafios específicos como conflitos frequentes, traição, mudanças na dinâmica familiar ou ausência de intimidade.
                     </p>
 
                     <p>
-                        As sessões podem decorrer em formato presencial ou online, sempre com foco na construção de uma relação
-                        terapêutica de confiança.
+                        Através de técnicas baseadas na empatia, na escuta ativa e no compromisso mútuo, ajudamos os casais a redescobrir caminhos de entendimento, respeito e conexão.
                     </p>
                 </motion.div>
 
-                {/* Cards de áreas de atuação */}
+                {/* Cards de tópicos trabalhados */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16 max-w-5xl w-full">
                     {[
-                        "Ansiedade",
-                        "Depressão",
-                        "Autoestima",
-                        "Stress",
-                        "Burnout",
-                        "Relacionamentos",
-                        "Crescimento pessoal",
-                        "Perturbações da Personalidade",
-                        "Atenção e Concentração",
-                        "Isolamento Social"
+                        "Conflitos conjugais",
+                        "Problemas de comunicação",
+                        "Crises de confiança",
+                        "Traição e perdão",
+                        "Gestão de separação",
+                        "Reacender a intimidade",
+                        "Educação dos filhos",
+                        "Gestão de expectativas",
+                        "Projetos em comum"
                     ].map((item, i) => (
                         <motion.div
                             key={i}
@@ -85,7 +81,7 @@ export default function ConsultasPsicologia() {
                         whileHover={{ scale: 1.05 }}
                         className="bg-blue-950 text-white font-semibold px-10 py-4 text-lg rounded-full shadow-md hover:bg-blue-900 transition duration-300"
                     >
-                        Agendar Consulta
+                        Agendar Sessão
                     </motion.a>
                 </div>
             </section>

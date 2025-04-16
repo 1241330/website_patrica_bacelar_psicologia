@@ -67,7 +67,7 @@ const Marcacoes = () => {
                 transition={{ duration: 0.5 }}
                 className="text-center mb-10"
             >
-                <h1 className="text-5xl font-extrabold text-blue-900 leading-tight">Marque a sua consulta</h1>
+                <h1 className="text-4xl font-extrabold text-blue-900 leading-tight">Faça a sua Marcação</h1>
                 <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
             </motion.div>
 
@@ -101,12 +101,14 @@ const Marcacoes = () => {
                 ))}
 
                 <div>
-                    <label className="block text-blue-950 font-medium">Tipo de Consulta:</label>
+                    <label className="block text-blue-950 font-medium">Tipo de Marcação:</label>
                     <div className="space-y-2">
                         {[
                             { value: "psicologia", label: "Consulta de Psicologia" },
                             { value: "terapia", label: "Consulta de Terapia de Casal/Familiar" },
                             { value: "online", label: "Consulta de Psicologia Online" },
+                            { value: "meditação", label: "Grupo Regular de Meditação" },
+                            { value: "terapeutico", label: "Grupo Terapêutico" }
                         ].map((option, index) => (
                             <label
                                 key={index}

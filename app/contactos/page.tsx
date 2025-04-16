@@ -51,7 +51,7 @@ const ContactPage = () => {
                 transition={{duration: 0.5}}
                 className="text-center mb-10"
             >
-                <h1 className="text-5xl font-extrabold text-blue-900 leading-tight">Fale connosco</h1>
+                <h1 className="text-4xl font-extrabold text-blue-900 leading-tight">Fale connosco</h1>
                 <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 mb-7 rounded-full"></div>
 
                 <h2 className="text-xl text-center text-blue-950 mb-0">
